@@ -79,6 +79,53 @@ npm run build
 3. Интегрировать LLM (OpenAI, Anthropic, etc.)
 4. Настроить базу данных для хранения аккаунтов и контента
 
+## 📦 Создание ZIP для деплоя
+
+### Windows
+```
+Дважды кликните на create-zip.bat
+```
+
+### macOS / Linux
+```bash
+chmod +x create-zip.sh
+bash create-zip.sh
+```
+
+### Через Node.js (любая ОС)
+```bash
+node create-zip.js
+```
+
+Результат — файл `socialpilot-deploy.zip` в корне проекта.
+
+## 🌐 Деплой из ZIP
+
+### Netlify (самый простой)
+1. Распакуйте `socialpilot-deploy.zip`
+2. Зайдите на [app.netlify.com/drop](https://app.netlify.com/drop)
+3. Перетащите папку `dist/` в браузер
+4. Готово! Получите публичную ссылку
+
+### Vercel
+```bash
+npm i -g vercel
+vercel deploy --prod
+```
+
+### GitHub Pages
+```bash
+git init
+git add .
+git commit -m "Initial commit"
+git remote add origin https://github.com/username/repo.git
+git push -u origin main
+# Затем в Settings → Pages → Source: gh-pages
+```
+
+### Любой хостинг (Apache/Nginx)
+Просто загрузите содержимое папки `dist/` в корень веб-сервера.
+
 ## 📄 Лицензия
 
 MIT
